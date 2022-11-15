@@ -1,0 +1,519 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body,html{
+    width: 100%;
+    font-family: 'Cera Pro';
+    background: url(../images/backgroung.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.header{
+    height: 89px;
+    background-color: #1400FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 45px;
+}
+
+.header__list{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__link{            
+    font-family: 'Futura PT';
+    font-size: 20px;
+    font-weight: 450;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.header__item{
+    padding-top: 10px;
+}
+
+.header-logo__img{
+  width: 278px;
+  height: 47px;
+}
+
+.menu-btn {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	z-index:2;
+	overflow: hidden;
+  margin-left: 10px;
+  display: none;
+}
+
+
+
+.menu-btn span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
+}
+
+.menu-btn.active span:nth-of-type(1) {
+  display: none;
+}
+.menu-btn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);  
+}
+.menu-btn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg); 
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	padding: 15px;
+  background: #001196;
+	transform: translateX(100%);
+	transition: transform 0.5s; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.menu.active {
+	transform: translateX(0);
+}
+
+.main{
+  background: none;
+}
+
+.menu li {
+	list-style-type: none;
+  margin-top: 30px;
+}
+
+.section-1{
+  min-height: 530px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-1__text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-1__h1{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
+.section-1__p{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.77);
+}
+
+.section-2{
+  min-height: 530px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-2__content{
+  width: 100%;
+  max-width: 550px;
+  min-height: 434px;
+  background: linear-gradient(123.64deg, rgba(255, 255, 255, 0.05) 0.65%, rgba(255, 255, 255, 0.05) 101.75%);
+  backdrop-filter: blur(4px);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-2__content__h1{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section-2__main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  gap:30px;
+}
+
+.section-2__content_first{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+.section-2__content_first:last-child{
+  margin-bottom: 35px;
+}
+
+.section-2__content_first__p{
+  font-family: 'Cera Pro';
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  color: #FFFFFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section-2__content_first__ul{
+  list-style-type: disc;
+  color: #FFFFFF;
+}
+
+.section-2__content_li span{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  color: #FFFFFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section-3{
+  min-height: 530px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.section-3__main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-3__images{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-3__img:first-child{
+  margin-top: 80px;
+}
+
+.section-3__img:last-child{
+  margin-bottom: 150px;
+  position: relative;
+  left: -76px;
+}
+
+.section-3__text{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  gap: 30px;
+}
+
+.section-3__h1{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;  
+}
+
+.section-3__p{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 191.2%;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.section-4{
+  min-height: 530px;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  gap: 30px;
+}
+
+.section-4_top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.section-4_top__images{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-4__h1{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;  
+}
+
+.section-4__img{
+  cursor: pointer;
+}
+
+.section-4__p{
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 163.2%;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  
+}
+
+.section-4_top__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.bottom-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.secton-4__bold{
+  font-weight: 900;
+}
+
+.bottom-images{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.section-5{
+  min-height: 530px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  flex-direction: column;
+}
+
+.section-5__h1{
+  font-family: 'Cera Pro';
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;  
+}
+
+.section-5__cards{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-5__card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-5__card:last-child{
+  padding-top: 108px;
+}
+
+
+.section-5__text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: center;
+}
+
+.section-5__card__h1{
+  font-family: 'Cera Pro';
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 162.7%;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.section-5__card__p{
+  font-family: 'Cera Pro';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 162.7%;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 106, 255, 0.38);
+  backdrop-filter: blur(10.5px);
+}
+
+.footer-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.footer-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.footer-bottom_list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.footer-bottom_link{
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
